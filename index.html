@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock list</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="title">Popular</div>
+            <div class="card-list">
+                <div class="card">
+                    <div class="rating"><span>10.0</span></div>
+                    <div class="ticker">ABC</div>
+                    <div class="name">ABC Holding Ltd.</div>
+                    <div class="close">
+                        <div><span class="currency">HKD</span>123.45</div>
+                    </div>
+                    <div class="pct-change">
+                        <div>6.23<span class="pct-sign">%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            let section = document.querySelector('.section');
+            let cardList = section.querySelector('.card-list');
+            let card = cardList.querySelector('.section .card');
+            for (i of Array(6).keys()) {
+                cardList.appendChild(card.cloneNode(true));
+            }
+            let container = document.querySelector('.container');
+            for (i of Array(6).keys()) {
+                container.appendChild(section.cloneNode(true));
+            }
+        })();
+    </script>
+</body>
+</html>
